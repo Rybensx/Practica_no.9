@@ -1,11 +1,11 @@
 <?php
-require '../../modelos/Producto.php';
+require '../../modelos/Cliente.php';
 try {
-    $producto = new Producto($_GET);
+    $cliente = new Cliente($_GET);
     
-    $productos = $producto->buscar();
+    $clientes = $cliente->buscar();
     // echo "<pre>";
-    // var_dump($productos);
+    // var_dump($clientes);
     // echo "</pre>";
     // exit;
     // $error = "NO se guardó correctamente";
@@ -34,20 +34,20 @@ try {
                         <tr>
                             <th>NO. </th>
                             <th>NOMBRE</th>
-                            <th>PRECIO</th>
+                            <th>NIT</th>
                             <th>MODIFICAR</th>
                             <th>ELIMINAR</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php if(count($productos) > 0):?>
-                        <?php foreach($productos as $key => $producto) : ?>
+                        <?php if(count($clientes) > 0):?>
+                        <?php foreach($clientes as $key => $cliente) : ?>
                         <tr>
                             <td><?= $key + 1 ?></td>
-                            <td><?= $producto['PRODUCTO_NOMBRE'] ?></td>
-                            <td><?= $producto['PRODUCTO_PRECIO'] ?></td>
-                            <td><a class="btn btn-warning w-100" href="/Practica_no.9/vistas/productos/modificar.php?producto_id=<?= $producto['PRODUCTO_ID']?>">Modificar</a></td>
-                            <td><a class="btn btn-danger w-100" href="/Practica_no.9/controladores/productos/eliminar.php?producto_id=<?= $producto['PRODUCTO_ID']?>">Eliminar</a></td>
+                            <td><?= $cliente['CLIENTE_NOMBRE'] ?></td>
+                            <td><?= $cliente['CLIENTE_NIT'] ?></td>
+                            <td><a class="btn btn-warning w-100" href="/Practica_no.9/vistas/clientes/modificar.php?cliente_id=<?= $cliente['CLIENTE_ID']?>">Modificar</a></td>
+                            <td><a class="btn btn-danger w-100" href="/Practica_no.9/controladores/clientes/eliminar.php?cliente_id=<?= $cliente['CLIENTE_ID']?>">Eliminar</a></td>
                         </tr>
                         <?php endforeach ?>
                         <?php else :?>
@@ -61,7 +61,7 @@ try {
         </div>
         <div class="row justify-content-center">
             <div class="col-lg-4">
-                <a href="/Practica_no.9/vistas/productos/buscar.php" class="btn btn-info w-100">Volver al formulario</a>
+                <a href="/Practica_no.9/vistas/clientes/buscar.php" class="btn btn-info w-100">Volver al formulario</a>
             </div>
         </div>
     </div>
