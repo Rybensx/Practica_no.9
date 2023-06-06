@@ -60,4 +60,3 @@ if($_POST['cliente_nombre'] != '' && $_POST['cliente_nit']  != '' && $_POST['cli
     </div>
 </body>
 </html>
-
